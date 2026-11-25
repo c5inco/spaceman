@@ -89,7 +89,7 @@ impl Pane {
             Pane::Layout => &LAYOUT_ICON,
             Pane::Rules => &RULES_ICON,
             Pane::Workspaces => &WORKSPACES_ICON,
-            Pane::Shortcuts => &rune_theme_opencode::icons::KEYBOARD,
+            Pane::Shortcuts => &rune_kit::glyphs::KEYBOARD,
             Pane::Activity => &ACTIVITY_ICON,
         }
     }

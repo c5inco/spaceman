@@ -16,6 +16,12 @@ use crate::{
     view::scroll_body,
 };
 
+static PLUS_ICON: rune::Icon = rune::Icon {
+    name: "spaceman-add",
+    view: 16.0,
+    body: r#"<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="currentColor" d="M7.25 3h1.5v4.25H13v1.5H8.75V13h-1.5V8.75H3v-1.5h4.25z"/></svg>"#,
+};
+
 const COLS: usize = 5;
 const TILE_W: f32 = 108.0;
 const TILE_H: f32 = 100.0;
@@ -416,7 +422,7 @@ impl MapView<'_> {
             .focusable(true)
             .focus_ring(2.0, -2.0, c.border_focus)
             .on_press(|ui: &mut Ui| ui.open_add_menu(Place::Float))
-            .child(rune::icon(&rune_theme_opencode::icons::PLUS, 14.0).color(c.icon_muted))
+            .child(rune::icon(&PLUS_ICON, 14.0).color(c.icon_muted))
             .child(text("Add app").font(self.p.k.ty.ui).color(self.p.muted()));
         self.add_menu("add-float-menu", trigger, Place::Float, layer)
     }
@@ -435,7 +441,7 @@ impl MapView<'_> {
             .hover(c.hover)
             .press(c.pressed)
             .on_press(move |ui: &mut Ui| ui.open_add_menu(place))
-            .child(rune::icon(&rune_theme_opencode::icons::PLUS, 14.0).color(c.icon_muted));
+            .child(rune::icon(&PLUS_ICON, 14.0).color(c.icon_muted));
         let trigger = if open || self.ui.drag.is_some() {
             trigger.opacity(if open { 1.0 } else { 0.0 })
         } else {

@@ -1,5 +1,4 @@
-//! Settings controls on `rune-kit` with OpenCode's theme, the same as Hex's and Invoke's: the
-//! raised card, its rows, switches, permission controls and buttons.
+//! Settings cards, switches, permission controls and buttons.
 
 use std::sync::LazyLock;
 
@@ -10,6 +9,9 @@ use rune::{
 use rune_kit::{Button, ButtonVariant, ControlSize, Kit, Switch};
 
 use crate::{Ui, apps::App};
+
+static DARK_KIT: LazyLock<Kit> = LazyLock::new(|| Kit::neutral(true));
+static LIGHT_KIT: LazyLock<Kit> = LazyLock::new(|| Kit::neutral(false));
 
 /// Row descriptions and secondary copy.
 pub const DESCRIPTION: TextStyle = TextStyle::new(12.0, 440.0).lh(16.0);
@@ -27,7 +29,7 @@ pub struct Paint {
 impl Paint {
     pub fn new(dark: bool, scale: f32) -> Self {
         Self {
-            k: rune_theme_opencode::kit(dark),
+            k: if dark { &DARK_KIT } else { &LIGHT_KIT },
             hair: 1.0 / scale,
         }
     }

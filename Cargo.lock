@@ -3087,16 +3087,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "rune-theme-opencode"
-version = "0.0.1"
-source = "git+https://github.com/anomalyco/rune?rev=1de0710548e53bb4aa6ef05cd4ca2c69b8fa8323#1de0710548e53bb4aa6ef05cd4ca2c69b8fa8323"
-dependencies = [
- "rune",
- "rune-kit",
- "serde_json",
-]
-
-[[package]]
 name = "rune-tiny-skia-path"
 version = "0.11.4"
 source = "git+https://github.com/anomalyco/rune?rev=1de0710548e53bb4aa6ef05cd4ca2c69b8fa8323#1de0710548e53bb4aa6ef05cd4ca2c69b8fa8323"
@@ -3470,7 +3460,6 @@ dependencies = [
  "rune",
  "rune-kit",
  "rune-mac",
- "rune-theme-opencode",
  "spaceman",
  "toml_edit 0.23.10+spec-1.0.0",
 ]

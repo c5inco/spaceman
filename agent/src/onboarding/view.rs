@@ -61,7 +61,7 @@ pub fn overlay(ui: &Ui, p: Paint) -> Option<El> {
         .center_y()
         .justify_end()
         .child(
-            IconButton::new(&rune_theme_opencode::icons::CLOSE)
+            IconButton::new(&rune_kit::glyphs::CLOSE)
                 .variant(IconButtonVariant::Ghost)
                 .control_size(ControlSize::Large)
                 .label("Close setup tour")

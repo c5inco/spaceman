@@ -274,7 +274,7 @@ fn keys_face(p: Paint, chords: &[Chord], saved: bool) -> El {
         .gap(4.0)
         .center_y()
         .children(saved.then(|| {
-            rune::icon(&rune_theme_opencode::icons::CHECK_SMALL, 16.0)
+            rune::icon(&rune_kit::glyphs::CHECK_SMALL, 16.0)
                 .key("saved")
                 .color(p.success())
         }))
